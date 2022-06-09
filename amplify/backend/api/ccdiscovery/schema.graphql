@@ -10,3 +10,14 @@ type Todo @model @auth(rules: [
     name: String!
     description: String
 }
+
+input TodoInput {
+    id: ID!
+    name: String!
+    description: String
+}
+
+type Mutation {
+    todoCustomLambda(input: TodoInput): Todo
+    @function(name: "todoCustomLambda-${env}")
+}

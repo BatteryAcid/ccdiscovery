@@ -57,5 +57,12 @@
         ]
       }
     }
+  },
+  "function": {
+    "todoCustomLambda": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
   }
 }
