@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "ccdiscovery",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/base/ws/creative-collective/repos/ccdiscovery/amplify/backend/api/ccdiscovery/schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 7
+    }
+  }
+}
