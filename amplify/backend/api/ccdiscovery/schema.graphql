@@ -5,7 +5,7 @@
 type Todo @model @auth(rules: [
         { allow: private, operations: [read], provider: userPools },
         { allow: owner, provider: userPools }
-    ]) @aws_cognito_user_pools {
+    ]) @aws_cognito_user_pools{
     id: ID!
     name: String!
     description: String
@@ -20,4 +20,6 @@ input TodoInput {
 type Mutation {
     todoCustomLambda(input: TodoInput): Todo
     @function(name: "todoCustomLambda-${env}")
+    @auth(rules: [ { allow: owner } ]) 
+    @aws_cognito_user_pools
 }

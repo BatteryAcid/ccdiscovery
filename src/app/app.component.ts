@@ -16,6 +16,7 @@ export class AppComponent {
     title = 'ccdiscovery';
     public createForm: FormGroup;
     public updateForm: FormGroup;
+    public updateCustomLambdaForm: FormGroup;
     public todos: Array<Todo> = [];
 
     constructor(private fb: FormBuilder) {
@@ -25,6 +26,12 @@ export class AppComponent {
         });
 
         this.updateForm = this.fb.group({
+            id: ['', Validators.required],
+            name: ['', Validators.required],
+            description: ['', Validators.required]
+        });
+
+        this.updateCustomLambdaForm = this.fb.group({
             id: ['', Validators.required],
             name: ['', Validators.required],
             description: ['', Validators.required]
@@ -55,8 +62,24 @@ export class AppComponent {
         await this.listTodos();
     }
 
+    public async onCustomUpdate(todo: Todo) {
+        console.log("Calling onCustomUpdate.");
+        let updateTodoResponse = await API.graphql({
+            query: mutations.todoCustomLambda,
+            variables: { input: todo },
+            authMode: GRAPHQL_AUTH_MODE.AMAZON_COGNITO_USER_POOLS
+        }) as GraphQLResult<any>;
+        console.log(updateTodoResponse);
+        this.updateCustomLambdaForm.reset();
+        await this.listTodos();
+    }
+
     async populateUpdateForm(todo: Todo) {
         this.updateForm.patchValue(todo);
+    }
+
+    async populateUpdateCustomLambdaForm(todo: Todo) {
+        this.updateCustomLambdaForm.patchValue(todo);
     }
 
     async listTodos() {
