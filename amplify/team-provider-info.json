@@ -10,6 +10,11 @@
       "StackName": "amplify-ccdiscovery-dev-111026",
       "StackId": "arn:aws:cloudformation:us-east-1:654368844800:stack/amplify-ccdiscovery-dev-111026/4bee50c0-e806-11ec-921e-0a63ac4889d3",
       "AmplifyAppId": "dnrphsjq4vk2m"
+    },
+    "categories": {
+      "auth": {
+        "ccdiscoveryaa5ffeea": {}
+      }
     }
   }
 }
