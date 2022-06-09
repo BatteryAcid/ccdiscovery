@@ -334,8 +334,14 @@
         </svg>
 
         <span>{{ title }} app is running!</span>
-
     </div>
+
+    <amplify-authenticator>
+        <ng-template amplifySlot="authenticated" let-user="user" let-signOut="signOut">
+            <h1>Welcome {{ user.username }}!</h1>
+            <button (click)="signOut()">Sign Out</button>
+        </ng-template>
+    </amplify-authenticator>
 
     <h2>Todo List</h2>
     <div>
