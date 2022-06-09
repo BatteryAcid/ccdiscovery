@@ -1,0 +1,8 @@
+{
+    "apiGraphQLAPIIdOutput": {
+        "Fn::GetAtt": [
+            "apiccdiscovery",
+            "Outputs.GraphQLAPIIdOutput"
+        ]
+    }
+}

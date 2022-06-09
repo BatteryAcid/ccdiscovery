@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "ccdiscoveryaa5ffeea": {}
+      },
+      "function": {
+        "todoCustomLambda": {
+          "deploymentBucketName": "amplify-ccdiscovery-dev-111026-deployment",
+          "s3Key": "amplify-builds/todoCustomLambda-5a68664b6e652b614145-build.zip"
+        }
       }
     }
   }

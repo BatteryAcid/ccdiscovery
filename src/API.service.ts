@@ -2,6 +2,22 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
+export type TodoInput = {
+  id: string,
+  name: string,
+  description?: string | null,
+};
+
+export type Todo = {
+  __typename: "Todo",
+  id: string,
+  name: string,
+  description?: string | null,
+  createdAt: string,
+  updatedAt: string,
+  owner?: string | null,
+};
+
 export type CreateTodoInput = {
   id?: string | null,
   name: string,
@@ -56,16 +72,6 @@ export type ModelSizeInput = {
   between?: Array< number | null > | null,
 };
 
-export type Todo = {
-  __typename: "Todo",
-  id: string,
-  name: string,
-  description?: string | null,
-  createdAt: string,
-  updatedAt: string,
-  owner?: string | null,
-};
-
 export type UpdateTodoInput = {
   id: string,
   name?: string | null,
@@ -105,6 +111,22 @@ export type ModelTodoConnection = {
   __typename: "ModelTodoConnection",
   items:  Array<Todo | null >,
   nextToken?: string | null,
+};
+
+export type TodoCustomLambdaMutationVariables = {
+  input?: TodoInput | null,
+};
+
+export type TodoCustomLambdaMutation = {
+  todoCustomLambda?:  {
+    __typename: "Todo",
+    id: string,
+    name: string,
+    description?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
 };
 
 export type CreateTodoMutationVariables = {

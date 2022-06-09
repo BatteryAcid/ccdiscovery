@@ -2,6 +2,18 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const todoCustomLambda = /* GraphQL */ `
+  mutation TodoCustomLambda($input: TodoInput) {
+    todoCustomLambda(input: $input) {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
 export const createTodo = /* GraphQL */ `
   mutation CreateTodo(
     $input: CreateTodoInput!
