@@ -3,7 +3,15 @@
     "ccdiscovery": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "ccdiscoveryaa5ffeea",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ],
       "output": {
         "authConfig": {
           "defaultAuthentication": {
@@ -12,7 +20,14 @@
               "apiKeyExpirationDays": 7
             }
           },
-          "additionalAuthenticationProviders": []
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authccdiscoveryaa5ffeea"
+              }
+            }
+          ]
         }
       }
     }

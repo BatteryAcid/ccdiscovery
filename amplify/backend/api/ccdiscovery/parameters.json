@@ -1,5 +1,11 @@
 {
   "AppSyncApiName": "ccdiscovery",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authccdiscoveryaa5ffeea",
+      "Outputs.UserPoolId"
+    ]
+  }
 }
